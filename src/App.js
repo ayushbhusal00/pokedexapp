@@ -1,14 +1,15 @@
-function App() {
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Pokedex from "./pages/Pokedex";
+import PokemonDetails from "./pages/PokemonDetails";
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a>PokeDex - React App</a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Pokedex />}></Route>
+        <Route path="/pokemon/:id" element={<PokemonDetails />}></Route>
+      </Routes>
+    </Router>
   );
 }
-
-export default App;

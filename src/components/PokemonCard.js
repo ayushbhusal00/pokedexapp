@@ -1,7 +1,7 @@
 import React from "react";
 import { Grid, Card, CardMedia, CardContent, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-
+import { Link } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
   cardMedia: {
     margin: "auto",
@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
   },
   card: {
     cursor: "pointer",
-    background: "black",
+    backgroundColor: "black",
     color: "white",
     "&:hover": {
       backgroundColor: "rgb(90, 90, 90)",
@@ -25,20 +25,22 @@ export default function PokemonCard(props) {
   const { id, name } = pokemon;
   return (
     <Grid item xs={12} sm={2}>
-      <Card className={classes.card}>
-        <CardMedia
-          className={classes.cardMedia}
-          width="100%"
-          height={10}
-          image={image}
-          alt={id}
-        ></CardMedia>
-        <CardContent>
-          <Typography variant="body1" component="p">
-            {name}
-          </Typography>
-        </CardContent>
-      </Card>
+      <Link to={"/pokemon/" + id}>
+        <Card className={classes.card}>
+          <CardMedia
+            className={classes.cardMedia}
+            width="100%"
+            height={10}
+            image={image}
+            alt={id}
+          ></CardMedia>
+          <CardContent>
+            <Typography variant="body1" component="p">
+              {name}
+            </Typography>
+          </CardContent>
+        </Card>
+      </Link>
     </Grid>
   );
 }

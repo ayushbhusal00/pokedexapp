@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Grid, CircularProgress, Box } from "@mui/material";
-import AppNavigator from "../components/AppNavigator";
+
 import axios from "axios";
 import { POKEMON_API_URL, IMAGE_API_URL } from "../config";
 import PokemonCard from "../components/PokemonCard";
@@ -10,6 +10,7 @@ const useStyles = makeStyles((theme) => ({
   pokedexContainer: {
     textAlign: "center",
     padding: "80px 10px 0px 10px",
+    backgroundColor: "rgb(80,80,80)",
   },
 }));
 
@@ -38,7 +39,6 @@ export default function Pokedex() {
 
   return (
     <Box>
-      <AppNavigator></AppNavigator>
       {pokemonData ? (
         <Grid className={classes.pokedexContainer} container spacing={2}>
           {pokemonData.map((pokemon) => {

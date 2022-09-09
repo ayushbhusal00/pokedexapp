@@ -2,6 +2,7 @@ import React from "react";
 import { Grid, Card, CardMedia, CardContent, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { Link } from "react-router-dom";
+
 const useStyles = makeStyles((theme) => ({
   cardMedia: {
     margin: "auto",
@@ -22,6 +23,7 @@ const useStyles = makeStyles((theme) => ({
 export default function PokemonCard(props) {
   const classes = useStyles();
   const { pokemon, image } = props;
+  // console.log(pokemon);
   const { id, name } = pokemon;
   return (
     <Grid item xs={12} sm={2}>
